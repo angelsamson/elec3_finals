@@ -21,7 +21,6 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-
     </head>
     <body class="antialiased">
 
@@ -69,7 +68,6 @@
                 </div>
             @endif
 
-
             <div class="max-w-7xl mx-auto p-6 lg:p-8">
                 <div class="flex justify-center">
                     <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto bg-gray-100 dark:bg-gray-900">
@@ -77,8 +75,7 @@
                     </svg>
                 </div>
 
-            <h1 style=color:white;> WELCOME TO SAMPLE PROJECT! </h1>
-
+                <h1 style=color:white;> OFFERS PAGE </h1>
 
                 <div class="mt-16">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">

@@ -21,7 +21,6 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-
     </head>
     <body class="antialiased">
 
@@ -33,8 +32,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                            <a class="nav-link" href="/">Home</a>
-                        </li>    
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/about">About</a>
                     </li>
@@ -53,7 +52,6 @@
                 </ul>
             </div>
         </nav>
-
         <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
             @if (Route::has('login'))
                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
@@ -69,7 +67,6 @@
                 </div>
             @endif
 
-
             <div class="max-w-7xl mx-auto p-6 lg:p-8">
                 <div class="flex justify-center">
                     <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto bg-gray-100 dark:bg-gray-900">
@@ -77,8 +74,7 @@
                     </svg>
                 </div>
 
-            <h1 style=color:white;> WELCOME TO SAMPLE PROJECT! </h1>
-
+                <h1 style=color:white;> ABOUT PAGE </h1>
 
                 <div class="mt-16">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
