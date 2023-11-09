@@ -51,5 +51,4 @@
 </table>
 
 {!! $categories->links() !!}
-
 @endsection

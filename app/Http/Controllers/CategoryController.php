@@ -6,23 +6,13 @@ use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
+use Illuminated;
 
 class CategoryController extends Controller
 {
 
-    /*
-    public function index(){
-        $categories = Category::latest()->paginate('5');
-        return view ('admin.category.category',compact('categories'));
-    }*/
-
     public function create()
-    {
-        $validatedData = $request->validate([
-            'name'=> 'required|unique:categories|min:2|max:255',
-            'description'=> 'required|unique:categories|min:2|max:255',
-        ]);
-
+    {   
         return view('form.create');
     }
 
@@ -34,11 +24,15 @@ class CategoryController extends Controller
     
     public function submit(Request $request)
     {
-        Category::create([
-            'name' => $request->cat_name,
-            'description' => $request->cat_desc,
-            'created_at' => Carbon::now()
-        ]);
+        $this->validate(request(), [
+            'cat_name'=> 'required|min:2|max:255',
+            'cat_desc'=> 'required|min:2|max:255',
+        ]);                 
+        
+        $category = new Category;
+        $category->name = $request->cat_name;
+        $category->description = $request->cat_desc;
+        $category->save();
 
         return redirect('/categories')->with('status', 'Hooray! You have successfully added a new category.');
     }
