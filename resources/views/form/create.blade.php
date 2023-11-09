@@ -7,7 +7,12 @@
 @section('content')
 
 <form method="POST" action="{{ url('/submit') }}">
-    <h1> Create Category </h1>
+
+@error('title')
+    <div class="alert alert-danger">{{ $message }}</div>
+@enderror
+
+<h1> Create Category </h1>
     @csrf
     <div class="row my-3">
         <div class="col-md-12 my-2">

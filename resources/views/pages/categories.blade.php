@@ -45,9 +45,11 @@
             <button class="btn btn-danger" type="submit">DELETE</a></td>
         </tr>
         @endforeach     
-</form>
+        </form>
 
     </tbody>
-    {!! $categories->links() !!}
 </table>
+
+{!! $categories->links() !!}
+
 @endsection
