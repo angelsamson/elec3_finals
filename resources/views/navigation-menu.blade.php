@@ -19,13 +19,7 @@
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link href="/categories">
-                        {{ __('View All Categories') }}
-                    </x-nav-link>
-                </div>
-
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="/create">
-                        {{ __('Create A Category') }}
+                        {{ __('All Categories') }}
                     </x-nav-link>
                 </div>
             </div>
