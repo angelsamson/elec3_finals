@@ -51,7 +51,7 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         $category->delete();
-        return redirect('/categories')->with('status','Student Deleted Successfully.');
+        return redirect('/categories')->with('status','Record Deleted Successfully.');
     }
 
 
