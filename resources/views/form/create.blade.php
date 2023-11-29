@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
-<title> Lab Act 1: Create Category </title>
-@endsection
+<title> IT ELEC FINALS </title>
 
 @section('content')
 
