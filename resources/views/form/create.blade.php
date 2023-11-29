@@ -6,7 +6,7 @@
 
 @section('content')
 
-<form method="POST" action="{{ url('/submit') }}">
+<form action="{{ url('/submit') }}" method="POST" enctype="multipart/form-data">
 
     @if(count($errors))
         <div class="alert alert-danger">
@@ -29,13 +29,15 @@
             <label> Description: </label>
             <input type="text" name="cat_desc" id="#" class="form-control">
         </div>
+        <div class="col-md-12 my-2">
+            <label for="image">Image:</label>
+            <input type="file" name="cat_image" id="#" class="form-control">
+        </div>
         <div class="col-md-12 my-4">
             <button type="submit" class="btn btn-dark w-100"> Submit </button>
         </div>
     </div>
 
-    
-    
 </form>
 
 @endsection

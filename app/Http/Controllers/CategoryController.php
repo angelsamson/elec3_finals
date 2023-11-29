@@ -6,7 +6,7 @@ use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
-use Illuminated;
+use File;
 
 class CategoryController extends Controller
 {
@@ -25,26 +25,48 @@ class CategoryController extends Controller
     public function submit(Request $request)
     {
         $this->validate(request(), [
-            'cat_name'=> 'required|min:2|max:255',
-            'cat_desc'=> 'required|min:2|max:255',
-        ]);                 
-        
+            'cat_name' => 'required|min:1|max:255',
+            'cat_desc' => 'required|min:1|max:255',
+            'cat_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);  
+
+        $fileName = time() . '.' . $request->cat_image->extension();
+        $request->cat_image->storeAs('public/category', $fileName);
+
         $category = new Category;
         $category->name = $request->cat_name;
         $category->description = $request->cat_desc;
+        $category->image = $fileName;
         $category->save();
 
         return redirect('/categories')->with('status', 'Hooray! You have successfully added a new category.');
     }
 
     public function edit(Request $request, $id)
-    {   
+    {       
         $category = Category::find($id);
         $category->name = $request->cat_name;
         $category->description = $request->cat_desc;
+
+        if($request->hasfile('cat_image'))
+        {
+            $destination = 'storage/category'.$category->image;
+
+            if(File::exists($destination))
+            {
+                File::delete($destination);
+            }
+
+            $file = $request->file('cat_image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time().'edited'.'.'.$extension;
+            $file->move('storage/category', $filename);
+            $category->image = $filename;
+        }
+
         $category->update();
         
-        return redirect('/categories')->with('status', 'Yes mamser, You have successfully updated your data.');
+        return redirect('/categories')->with('status', 'Yes MamSer, You have successfully updated your data.');
     }
 
     public function destroy($id)

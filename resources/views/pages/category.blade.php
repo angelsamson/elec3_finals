@@ -30,5 +30,9 @@
             <th scope="col">Last Updated</th>
             <th scope="col">{{ $item->updated_at }}</th>
         </tr>
+        <tr>
+            <th scope="col">Image</th>
+            <th scope="col"><img src="{{ asset('storage/category/'.$item->image) }}" width=170></th>
+        </tr>
     </tbody>
 @endsection
